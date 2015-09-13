@@ -121,7 +121,10 @@ public class Customer {
         this.fax = fax;
     }
     
-    
+    @Override
+    public String toString(){
+        return this.getCompanyName() + ", " + this.getContactName();
+    }
     
 
 }
