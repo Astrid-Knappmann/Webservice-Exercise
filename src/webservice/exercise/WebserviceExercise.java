@@ -1,6 +1,7 @@
 
 package webservice.exercise;
 
+import DAO.CustomerDAO;
 import java.sql.Connection;
 import util.DBUtil;
 
@@ -9,12 +10,22 @@ import util.DBUtil;
  * @author Patrick
  */
 public class WebserviceExercise {
+    
+    private CustomerDAO customerDAO;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Connection dbConn = DBUtil.getInstance();
+        WebserviceExercise we = new WebserviceExercise();
+    
     }
+
+    public WebserviceExercise() {
+        Connection dbConn = DBUtil.getInstance();
+        customerDAO = new CustomerDAO(dbConn);
+    }
+    
+    
 
 }
