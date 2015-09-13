@@ -3,6 +3,7 @@ package webservice.exercise;
 
 import DAO.CustomerDAO;
 import java.sql.Connection;
+import model.Customer;
 import util.DBUtil;
 
 /**
@@ -25,6 +26,9 @@ public class WebserviceExercise {
         Connection dbConn = DBUtil.getInstance();
         customerDAO = new CustomerDAO(dbConn);
         System.out.println(customerDAO.getCustomer("ALFKI").toString());
+        Customer testCustomer = new Customer("AAAAA", "Netto", "Hans", "Chief", "Vej", "Copenhagen", "Zealand", "4600", "Denmark", "34234534", "dsfsdf");
+        customerDAO.createCustomer(testCustomer);
+        System.out.println(customerDAO.getCustomer("AAAAA"));
     }
     
     
