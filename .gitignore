@@ -1,3 +1,9 @@
+#netbeans specific
+dbs/core
+dbs/nbproject/*
+!dbs/nbproject/project.properties
+!dbs/nbproject/project.xml
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
