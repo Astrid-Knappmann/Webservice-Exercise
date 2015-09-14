@@ -29,6 +29,10 @@ public class WebserviceExercise {
         Customer testCustomer = new Customer("AAAAA", "Netto", "Hans", "Chief", "Vej", "Copenhagen", "Zealand", "4600", "Denmark", "34234534", "dsfsdf");
         customerDAO.createCustomer(testCustomer);
         System.out.println(customerDAO.getCustomer("AAAAA"));
+        testCustomer.setCompanyName("Fakta");
+        customerDAO.updateCustomer(testCustomer);
+        System.out.println(customerDAO.getCustomer("AAAAA"));
+        customerDAO.deleteCustomer(testCustomer);
     }
     
     

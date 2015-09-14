@@ -42,6 +42,24 @@ public class CustomerDAO {
         return null;
     }
     
+    public void updateCustomer(Customer customer){
+        try {
+            Statement st = dbConn.createStatement();
+            st.execute("UPDATE customers SET CompanyName='" + customer.getCompanyName() + "', ContactName='" + customer.getContactName() + "', ContactTitle='" + customer.getContactTitle() + "', Address='" + customer.getAddress() + "', City='" + customer.getCity() + "', Region='" + customer.getRegion() + "', PostalCode='" + customer.getPostalCode() + "', Country='" + customer.getCountry() + "', Phone='" + customer.getPhone() + "', Fax='" + customer.getFax() + "' WHERE CustomerID='" + customer.getId() + "';");
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void deleteCustomer(Customer customer){
+        try {
+            Statement st = dbConn.createStatement();
+            st.execute("DELETE FROM customers WHERE CustomerID='" + customer.getId() + "';");
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     
 
 }
