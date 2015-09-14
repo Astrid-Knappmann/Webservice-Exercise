@@ -2,6 +2,7 @@
 package webservice.exercise;
 
 import DAO.CustomerDAO;
+import DAO.OrderDAO;
 import java.sql.Connection;
 import model.Customer;
 import util.DBUtil;
@@ -13,6 +14,7 @@ import util.DBUtil;
 public class WebserviceExercise {
     
     private CustomerDAO customerDAO;
+    private OrderDAO orderDAO;
 
     /**
      * @param args the command line arguments
@@ -25,7 +27,9 @@ public class WebserviceExercise {
     public WebserviceExercise() {
         Connection dbConn = DBUtil.getInstance();
         customerDAO = new CustomerDAO(dbConn);
+        orderDAO = new OrderDAO(dbConn);
         testCustomerDAO();
+        testOrderDAO();
     }
     
     public void testCustomerDAO(){
@@ -37,6 +41,10 @@ public class WebserviceExercise {
         customerDAO.updateCustomer(testCustomer);
         System.out.println(customerDAO.getCustomer("AAAAA"));
         customerDAO.deleteCustomer(testCustomer);
+    }
+    
+    public void testOrderDAO(){
+        System.out.println(orderDAO.getOrder(10248).toString());
     }
     
     

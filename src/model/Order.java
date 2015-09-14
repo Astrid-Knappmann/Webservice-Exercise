@@ -1,6 +1,7 @@
 
 package model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -16,7 +17,7 @@ public class Order {
     private Date requiredDate;
     private Date shippedDate;
     private int shipVia;
-    private double freight;
+    private BigDecimal freight;
     private String shipName;
     private String shipAddress;
     private String shipCity;
@@ -24,7 +25,7 @@ public class Order {
     private String shipPostalCode;
     private String shipCountry;
 
-    public Order(int id, String customerID, int employeeID, Date orderDate, Date requiredDate, Date shippedDate, int shipVia, double freight, String shipName, String shipAddress, String shipCity, String shipRegion, String shipPostalCode, String shipCountry) {
+    public Order(int id, String customerID, int employeeID, Date orderDate, Date requiredDate, Date shippedDate, int shipVia, BigDecimal freight, String shipName, String shipAddress, String shipCity, String shipRegion, String shipPostalCode, String shipCountry) {
         this.id = id;
         this.customerID = customerID;
         this.employeeID = employeeID;
@@ -97,11 +98,11 @@ public class Order {
         this.shipVia = shipVia;
     }
 
-    public double getFreight() {
+    public BigDecimal getFreight() {
         return freight;
     }
 
-    public void setFreight(double freight) {
+    public void setFreight(BigDecimal freight) {
         this.freight = freight;
     }
 
