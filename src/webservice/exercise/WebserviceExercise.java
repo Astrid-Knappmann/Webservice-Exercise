@@ -25,6 +25,10 @@ public class WebserviceExercise {
     public WebserviceExercise() {
         Connection dbConn = DBUtil.getInstance();
         customerDAO = new CustomerDAO(dbConn);
+        testCustomerDAO();
+    }
+    
+    public void testCustomerDAO(){
         System.out.println(customerDAO.getCustomer("ALFKI").toString());
         Customer testCustomer = new Customer("AAAAA", "Netto", "Hans", "Chief", "Vej", "Copenhagen", "Zealand", "4600", "Denmark", "34234534", "dsfsdf");
         customerDAO.createCustomer(testCustomer);
